@@ -3,11 +3,11 @@ import { useState } from "react";
 
 const Sort = () => {
     const [openSort, setOpenSort] = useState(false);
-    const [activeCategory, setActiveCategory] = useState(0)
-    const categories = ['популярні', 'ціна', 'по алфавіту']
+    const [selected, setSelected] = useState(0)
+    const list = ['популярності', 'ціна', 'алфавіту']
 
     const onClickCategory = (i) => {
-        setActiveCategory(i);
+        setSelected(i);
         setOpenSort(false);
     }
     return (
@@ -26,14 +26,14 @@ const Sort = () => {
                     />
                 </svg>
                 <b>Сортування за:</b>
-                <span onClick={() => setOpenSort(!openSort)}>{categories[activeCategory]}</span>
+                <span onClick={() => setOpenSort(!openSort)}>{list[selected]}</span>
             </div>
             {openSort ? <div className="sort__popup">
                     <ul>
-                        {categories.map((category, i) => (
+                        {list.map((category, i) => (
                             <li 
                                 key={i} 
-                                className={activeCategory === i ? 'active': null} 
+                                className={selected === i ? 'active': null} 
                                 onClick={() => onClickCategory(i)}>
                                 {category}
                             </li>
