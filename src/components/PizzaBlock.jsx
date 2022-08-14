@@ -1,14 +1,13 @@
 import { useState } from "react";
 
-const PizzaBlock = ({ title, price, imgURL, sizes, types }) => {
+const PizzaBlock = ({ title, price, imageUrl, sizes, types }) => {
     const [activeType, setActiveType] = useState(0);
     const [activeSize, setActiveSize] = useState(0);
-
     const typeNames = ["тонка", "традиційна"];
 
     return (
         <div className="pizza-block">
-            <img className="pizza-block__image" src={imgURL} alt={title} />
+            <img className="pizza-block__image" src={imageUrl} alt={title} />
             <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
