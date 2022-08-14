@@ -1,9 +1,11 @@
+import logo from '../assets/img/pizza-logo.svg'
+
 const Header = () => {
     return (
       <div className="header">
         <div className="container">
           <div className="header__logo">
-            <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
+            <img width="38" src={logo} alt="Pizza logo" />
             <div>
               <h1>React Pizza</h1>
               <p>найсмачніша піца у всесвіті</p>
@@ -11,7 +13,7 @@ const Header = () => {
           </div>
           <div className="header__cart">
             <a href="/cart.html" className="button button--cart">
-              <span>520 ₽</span>
+              <span>200 ₴</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"

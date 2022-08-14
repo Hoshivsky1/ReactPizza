@@ -3,11 +3,11 @@ import Categories from "./components/Categories";
 import Sort from "./components/Sort";
 import PizzaBlock from "./components/PizzaBlock";
 
+import pizzas from "./assets/pizzas.json";
+
 import "./scss/app.scss";
 
-// function Pizza() {
-
-// }
+console.log(pizzas);
 
 function App() {
     return (
@@ -16,14 +16,21 @@ function App() {
             <div className="content">
                 <div className="container">
                     <div className="content__top">
-                        <Categories   />
-                        <Sort/>
+                        <Categories />
+                        <Sort />
                     </div>
                     <h2 className="content__title">Всі піци</h2>
                     <div className="content__items">
-                        <PizzaBlock title='Львівська' price={100}/>
-                        <PizzaBlock title='Київська' price={125}/>
-                        
+                        {pizzas.map((obj) => (
+                            <PizzaBlock
+                                key={obj.id}
+                                title={obj.title}
+                                price={obj.price}
+                                imgURL={obj.imageUrl}
+                                sizes={obj.sizes}
+                                types={obj.types}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
