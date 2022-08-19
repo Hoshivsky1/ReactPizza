@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
     return (
         <div className="container container--cart">
-            <div class="cart">
-                <div class="cart__top">
-                    <h2 class="content__title">
+            <div className="cart">
+                <div className="cart__top">
+                    <h2 className="content__title">
                         <svg
                             width="18"
                             height="18"
@@ -37,7 +37,7 @@ const Cart = () => {
                         </svg>
                         Корзина
                     </h2>
-                    <div class="cart__clear">
+                    <div className="cart__clear">
                         <svg
                             width="20"
                             height="20"
@@ -78,21 +78,21 @@ const Cart = () => {
                         <span>Очистити кошик</span>
                     </div>
                 </div>
-                <div class="content__items">
-                    <div class="cart__item">
-                        <div class="cart__item-img">
+                <div className="content__items">
+                    <div className="cart__item">
+                        <div className="cart__item-img">
                             <img
-                                class="pizza-block__image"
+                                className="pizza-block__image"
                                 src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                                 alt="Pizza"
                             />
                         </div>
-                        <div class="cart__item-info">
+                        <div className="cart__item-info">
                             <h3>Сирна Курка</h3>
                             <p>Тонке тісто, 26 см.</p>
                         </div>
-                        <div class="cart__item-count">
-                            <div class="button button--outline button--circle cart__item-count-minus">
+                        <div className="cart__item-count">
+                            <div className="button button--outline button--circle cart__item-count-minus">
                                 <svg
                                     width="10"
                                     height="10"
@@ -111,7 +111,7 @@ const Cart = () => {
                                 </svg>
                             </div>
                             <b>2</b>
-                            <div class="button button--outline button--circle cart__item-count-plus">
+                            <div className="button button--outline button--circle cart__item-count-plus">
                                 <svg
                                     width="10"
                                     height="10"
@@ -130,11 +130,11 @@ const Cart = () => {
                                 </svg>
                             </div>
                         </div>
-                        <div class="cart__item-price">
+                        <div className="cart__item-price">
                             <b>275 ₴</b>
                         </div>
-                        <div class="cart__item-remove">
-                            <div class="button button--outline button--circle">
+                        <div className="cart__item-remove">
+                            <div className="button button--outline button--circle">
                                 <svg
                                     width="10"
                                     height="10"
@@ -156,8 +156,8 @@ const Cart = () => {
                     </div>
                 </div>
             </div>
-            <div class="cart__bottom">
-                <div class="cart__bottom-details">
+            <div className="cart__bottom">
+                <div className="cart__bottom-details">
                     <span>
                         {" "}
                         Всього піцц: <b>3 шт.</b>{" "}
@@ -167,10 +167,10 @@ const Cart = () => {
                         Сума замовлення: <b>425 ₴</b>{" "}
                     </span>
                 </div>
-                <div class="cart__bottom-buttons">
+                <div className="cart__bottom-buttons">
                     <a
                         href="/"
-                        class="button button--outline button--add go-back-btn"
+                        className="button button--outline button--add go-back-btn"
                     >
                         <svg
                             width="8"
@@ -190,7 +190,7 @@ const Cart = () => {
 
                         <Link to='/'><span>Повернутися назад</span></Link>
                     </a>
-                    <div class="button pay-btn">
+                    <div className="button pay-btn">
                         <span>Оплатити зараз</span>
                     </div>
                 </div>
