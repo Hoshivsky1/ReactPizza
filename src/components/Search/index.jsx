@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Search.module.scss";
+import {SearchContext} from '../../App'
 
-function Search({ searchValue, setSearchValue }) {
+function Search() {
+    const {setSearchValue, searchValue} = useContext(SearchContext);
     return (
         <div className={styles.root}>
             <input
@@ -10,7 +12,7 @@ function Search({ searchValue, setSearchValue }) {
                 className={styles.input}
                 placeholder="Пошук піци..."
             />
-            <svg
+            <svg   
                 className={styles.icon}
                 height="512"
                 viewBox="0 0 512 512"
