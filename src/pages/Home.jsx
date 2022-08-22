@@ -11,7 +11,7 @@ const Home = () => {
     const {searchValue} = useContext(SearchContext);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [categoryId, setCategoryId] = useState(0);
+    const [categoryId, setCategoryId] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
     const [sortType, setSortType] = useState({
         name: 'популярності', 
@@ -26,7 +26,7 @@ const Home = () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const search = searchValue ? `&search=${searchValue}` : '';
 
-        fetch(`https://62f9029be05644803530cd6c.mockapi.io/items?page=${currentPage}&limit=4${category}&sortBy=${sortBy}&order=${order}${search}`)
+        fetch(`https://62f9029be05644803530cd6c.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`)
             .then(res => res.json())
             .then(arr => {
                 setItems(arr);
@@ -43,17 +43,9 @@ const Home = () => {
         setSortType(i)
     }
     
-    // .filter(obj => {
-    //     if(obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-    //         return true;
-    //     }
-    //     return false;
-    // } )
-
     const pizzas = items.map((obj) => <PizzaBlock key={obj.id} {...obj} />);
     const skeletons = [...new Array(9)].map((_, index) => (<Skeleton key={index} />))
     
-
     return (
         <div className="container">
             <div className="content__top">
@@ -62,7 +54,7 @@ const Home = () => {
             </div>
             <h2 className="content__title">Всі піци</h2>
             <div className="content__items">
-                {loading ? skeletons: pizzas}
+                {loading ? skeletons : pizzas}
             </div>
             <Pagination onChangePage={(number) => setCurrentPage(number)}/>
         </div>
