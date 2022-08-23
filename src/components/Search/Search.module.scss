@@ -14,6 +14,28 @@
     &:focus {
         border: 1px solid rgba(0, 0, 0, 0.5);
     }
+    
+}
+
+@media (max-width: 1260px) {
+    .root{
+        margin-left: 60px;
+        left: -70px;
+    }
+}
+@media (max-width: 1079px) {
+    .root{
+        left: -30px;
+    }
+}
+
+@media (max-width: 411px) {
+    .root{
+        max-width: 300px;
+    }
+    .input {
+        max-width: 300px;
+    }
 }
 
 .icon{

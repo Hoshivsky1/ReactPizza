@@ -3,15 +3,19 @@
 .header {
   border-bottom: 1px solid $gray-line;
   padding: 40px 0;
-
-  
+  @media (max-width:1260px) {
+    flex-wrap: wrap;
+    .header__logo{
+      margin-bottom: 20px;
+    }
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width:645px) {
+    @media (max-width:1000px) {
       flex-direction: column;
 
       .header__cart{
@@ -22,7 +26,12 @@
 
   &__logo {
     display: flex;
-
+    @media (max-width:1260px) {
+      min-width: 260px;
+    }
+    @media (max-width:1000px) {
+      min-width: 260px;
+    }
     img {
       margin-right: 15px;
     }
