@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -30,12 +31,11 @@ const Home = () => {
         const category = categoryId > 0 ? `category=${categoryId}` : '';
         const search = searchValue ? `&search=${searchValue}` : '';
 
-        fetch(`https://62f9029be05644803530cd6c.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`)
-            .then(res => res.json())
-            .then(arr => {
-                setItems(arr);
+        axios.get(`https://62f9029be05644803530cd6c.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortBy}&order=${order}${search}`)
+            .then(res => {
+                setItems(res.data);
                 setLoading(false);
-            });
+            })
         window.scrollTo(0,0);
     },[categoryId, sort.sortProperty, searchValue, currentPage]) 
 
