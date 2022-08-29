@@ -1,22 +1,24 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setSortType } from "../redux/slices/filterSlice";
 
-const Sort = () => {
+export const list = [
+    {name: 'високій популярності', sortProperty: 'rating'},
+    {name: 'низькій популярності', sortProperty: '-rating'},
+    {name: 'від дорогих до дешивих', sortProperty: 'price'},
+    {name: 'від дешевих до дорогих', sortProperty: '-price'},
+    {name: 'алфавіту A-Я', sortProperty: '-title'},
+    {name: 'алфавіту Я-А', sortProperty: 'title'}, 
+]
+
+const Sort = memo(() => {
     const dispatch = useDispatch();
     const sort = useSelector(state => state.filter.sort);
 
     const [openSort, setOpenSort] = useState(false);
     
-    const list = [
-        {name: 'високій популярності', sortProperty: 'rating'},
-        {name: 'низькій популярності', sortProperty: '-rating'},
-        {name: 'від дорогих до дешивих', sortProperty: 'price'},
-        {name: 'від дешевих до дорогих', sortProperty: '-price'},
-        {name: 'алфавіту A-Я', sortProperty: '-title'},
-        {name: 'алфавіту Я-А', sortProperty: 'title'}, 
-    ]
+    
 
     const onClickCategory = (i) => {
         dispatch(setSortType(i));
@@ -55,6 +57,6 @@ const Sort = () => {
                 </div> : null}
         </div>
     );
-};
+});
 
 export default Sort;
